@@ -77,13 +77,15 @@ export function HeroSection() {
 
         {/* CTAs */}
         <div className="reveal opacity-0 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            size="lg"
-            className="bg-brand-gradient text-white font-bold text-base px-8 py-6 hover:opacity-90 shadow-xl shadow-brand-500/30"
-          >
-            Učlani se
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link href="#contact">
+            <Button
+              size="lg"
+              className="bg-brand-gradient text-white font-bold text-base px-8 py-6 hover:opacity-90 shadow-xl shadow-brand-500/30"
+            >
+              Učlani se
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
           <Link
             href="#about"
             className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-transparent px-8 py-6 text-base font-medium text-foreground transition-colors hover:bg-white/5"

@@ -1,96 +1,61 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Check } from "lucide-react";
+import Link from "next/link";
 import { pricing } from "@/lib/constants";
 
 export function PricingSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-up");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll(".reveal");
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id="pricing"
-      ref={sectionRef}
-      className="section-padding bg-gradient-to-b from-background to-[#0a0a12]"
-    >
+    <section id="pricing" className="py-20 bg-background">
       <div className="section-container">
-        <div className="reveal opacity-0 mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
-            Naši <span className="text-brand-gradient">planovi</span>
-          </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
-            Izaberi plan koji ti najviše odgovara. Nema skrivenih troškova.
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">Cjenovnik</h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+            Izaberi plan koji ti najviše odgovara. Svi planovi uključuju pristup vrhunskoj opremi.
           </p>
         </div>
-
-        <div className="reveal opacity-0 mt-12 grid gap-8 lg:grid-cols-3 items-start">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {pricing.map((plan) => (
-            <div
+            <Card
               key={plan.name}
-              className={`relative rounded-2xl border p-8 transition-all duration-300 ${
-                plan.popular
-                  ? "border-brand-500/50 bg-brand-500/5 shadow-[0_0_40px_-10px_rgba(249,115,22,0.3)] scale-105 lg:scale-110"
-                  : "border-white/10 bg-card hover:border-white/20"
+              className={`relative p-8 flex flex-col ${
+                plan.popular ? "border-brand-500 shadow-xl shadow-brand-500/10 scale-105" : ""
               }`}
             >
               {plan.popular && (
-                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gradient text-white font-bold border-0">
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gradient text-white border-0 px-6 py-1">
                   Najpopularniji
                 </Badge>
               )}
-
-              <h3 className="text-lg font-bold text-foreground">
-                {plan.name}
-              </h3>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-black text-foreground">
-                  {plan.price}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  /{plan.period}
-                </span>
+              <div className="mb-6">
+                <h3 className="text-xl font-bold">{plan.name}</h3>
+                <div className="mt-2">
+                  <span className="text-4xl font-bold">{plan.price}</span>
+                  <span className="text-muted-foreground ml-1">/{plan.period}</span>
+                </div>
               </div>
-
-              <ul className="mt-6 space-y-3">
+              <ul className="space-y-3 flex-1">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
+                  <li key={feature} className="flex items-start gap-2 text-sm">
+                    <Check className="h-4 w-4 text-brand-500 mt-0.5 shrink-0" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
-
-              <Button
-                className={`mt-8 w-full font-bold ${
-                  plan.popular
-                    ? "bg-brand-gradient text-white hover:opacity-90 shadow-lg shadow-brand-500/25"
-                    : "border-white/20 text-foreground hover:bg-white/5"
-                }`}
-                variant={plan.popular ? "default" : "outline"}
-              >
-                Učlani se
-              </Button>
-            </div>
+              <Link href="#contact" className="mt-8 block">
+                <Button
+                  className={`w-full font-bold ${
+                    plan.popular
+                      ? "bg-brand-gradient text-white hover:opacity-90 shadow-lg shadow-brand-500/25"
+                      : "border-white/20 text-foreground hover:bg-white/5"
+                  }`}
+                  variant={plan.popular ? "default" : "outline"}
+                >
+                  Učlani se
+                </Button>
+              </Link>
+            </Card>
           ))}
         </div>
       </div>
