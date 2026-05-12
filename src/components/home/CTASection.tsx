@@ -27,7 +27,13 @@ const contactMethods = [
 
 export function CTASection() {
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-background via-background to-brand-950/20">
+    <section id="contact" className="py-24 relative overflow-hidden">
+      {/* Gym background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.05]"
+        style={{ backgroundImage: "url(/insta_post_1.jpg)" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-brand-950/20" />
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold">Kontakt</h2>

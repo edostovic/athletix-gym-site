@@ -5,7 +5,13 @@ const planIcons = ["🕐", "📆", "📅"];
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 bg-background relative">
+    <section id="pricing" className="py-20 relative overflow-hidden">
+      {/* Gym background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed opacity-[0.07]"
+        style={{ backgroundImage: "url(/insta_post_3.jpg)" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       {/* Subtle background accent */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-brand-500/5 blur-[120px] pointer-events-none" />
 
