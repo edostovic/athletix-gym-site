@@ -19,9 +19,9 @@ export const trainers = [
 ];
 
 export const pricing = [
-  { name: "Dnevna", price: "5 KM", period: "dan", features: ["Pristup teretani", "Osnovna oprema"] },
-  { name: "Mjesečna", price: "45 KM", period: "mjesec", features: ["Neograničen pristup", "Sva oprema", "Grupni treninzi", "Sauna"], popular: true },
-  { name: "Godišnja", price: "399 KM", period: "godina", features: ["Sve iz mjesečne", "+3 PT treninga", "Prehrambeni plan", "Prioritetna podrška"] },
+  { name: "Dnevna", price: "5 KM", period: "dan", features: ["Pristup teretani", "Osnovna oprema"], tag: "Idealno za probu" },
+  { name: "Mjesečna", price: "45 KM", period: "mjesec", features: ["Neograničen pristup", "Sva oprema", "Grupni treninzi", "Sauna"], tag: "Najtraženija opcija" },
+  { name: "Godišnja", price: "399 KM", period: "godina", features: ["Sve iz mjesečne", "+3 PT treninga", "Prehrambeni plan", "Prioritetna podrška"], tag: "Najbolja vrijednost" },
 ];
 
 export const facilities = [

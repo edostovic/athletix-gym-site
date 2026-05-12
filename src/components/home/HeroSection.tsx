@@ -2,9 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Dumbbell, Users, Award } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Dumbbell, Users, Award, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
 
 const stats = [
   { value: "+500", label: "Članova", icon: Users },
@@ -82,16 +82,17 @@ export function HeroSection() {
               size="lg"
               className="bg-brand-gradient text-white font-bold text-base px-8 py-6 hover:opacity-90 shadow-xl shadow-brand-500/30"
             >
-              Učlani se
+              Kontaktiraj nas
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <Link
-            href="#about"
-            className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-transparent px-8 py-6 text-base font-medium text-foreground transition-colors hover:bg-white/5"
+          <a
+            href={`tel:${siteConfig.phone}`}
+            className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-transparent px-8 py-6 text-base font-medium text-foreground transition-colors hover:bg-white/5 gap-2"
           >
-            Saznaj više
-          </Link>
+            <Phone className="h-4 w-4 text-brand-400" />
+            {siteConfig.phone}
+          </a>
         </div>
 
         {/* Stats */}
