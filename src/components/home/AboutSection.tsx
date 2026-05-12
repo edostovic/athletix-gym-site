@@ -50,24 +50,48 @@ export function AboutSection() {
     <section id="about" ref={sectionRef} className="section-padding">
       <div className="section-container">
         {/* Header */}
-        <div className="reveal opacity-0 mx-auto max-w-2xl text-center">
+        <div className="reveal opacity-0 mx-auto max-w-2xl text-center mb-12">
           <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
             Zašto <span className="text-brand-gradient">ATHLETIX</span>?
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             {siteConfig.fullName} je više od teretane. Mi smo zajednica
-            posvećena tvojoj transformaciji. Vrhunska oprema, stručni treneri i
-            atmosfera koja inspiriše — sve na jednom mjestu.
+            posvećena tvojoj transformaciji.
           </p>
         </div>
 
+        {/* Split layout: image + text */}
+        <div className="reveal opacity-0 grid md:grid-cols-2 gap-10 items-center mb-14">
+          <div className="relative">
+            <div className="rounded-2xl overflow-hidden border border-white/10">
+              <img
+                src="/athletix_gym_profile.jpg"
+                alt="ATHLETIX Gym Banovići"
+                className="w-full h-auto object-cover"
+                onError={(e) => { e.currentTarget.style.display = "none"; }}
+              />
+            </div>
+            {/* Decorative glow */}
+            <div className="absolute -bottom-4 -right-4 w-48 h-48 rounded-full bg-brand-500/10 blur-[60px] pointer-events-none" />
+          </div>
+
+          <div className="space-y-5">
+            <p className="text-muted-foreground leading-relaxed">
+              Vrhunska oprema, stručni treneri i atmosfera koja inspiriše — sve na jednom mjestu.
+              Bilo da si početnik ili iskusan sportista, kod nas ćeš pronaći sve što ti treba
+              za ozbiljan trening i stvarne rezultate.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Nije potrebno iskustvo. Svi nivoi su dobrodošli. Prvi trening je besplatan —
+              dođi, probaj, pa odluči.
+            </p>
+          </div>
+        </div>
+
         {/* Features Grid */}
-        <div className="reveal opacity-0 mt-12 grid gap-8 sm:grid-cols-3">
+        <div className="reveal opacity-0 grid gap-8 sm:grid-cols-3">
           {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="card-hover text-center"
-            >
+            <div key={feature.title} className="card-hover text-center">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-500/10">
                 <feature.icon className="h-7 w-7 text-brand-400" />
               </div>

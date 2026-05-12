@@ -25,7 +25,12 @@ export function TrainersSection() {
   }, []);
 
   return (
-    <section id="trainers" ref={sectionRef} className="section-padding">
+    <section id="trainers" ref={sectionRef} className="section-padding relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.04]"
+        style={{ backgroundImage: "url(/insta_post_4.jpg)" }}
+      />
+      <div className="absolute inset-0 bg-background/90" />
       <div className="section-container">
         <div className="reveal opacity-0 mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
@@ -42,11 +47,18 @@ export function TrainersSection() {
               key={trainer.name}
               className="card-hover text-center"
             >
-              {/* Photo placeholder */}
-              <div className="mx-auto mb-5 h-28 w-28 rounded-full bg-gradient-to-br from-brand-500/30 to-brand-700/30 flex items-center justify-center">
-                <span className="text-4xl font-black text-brand-400/50">
-                  {trainer.name.charAt(0)}
-                </span>
+              {/* Trainer photo */}
+              <div className="mx-auto mb-5 h-28 w-28 rounded-full overflow-hidden border-2 border-brand-500/30">
+                <img
+                  src={trainer.image}
+                  alt={trainer.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = "none";
+                    target.parentElement!.classList.add("bg-gradient-to-br", "from-brand-500/30", "to-brand-700/30");
+                  }}
+                />
               </div>
               <h3 className="text-lg font-bold text-foreground">
                 {trainer.name}

@@ -26,7 +26,12 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-padding">
+    <section ref={sectionRef} className="section-padding relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-[0.04]"
+        style={{ backgroundImage: "url(/insta_post_6.jpg)" }}
+      />
+      <div className="absolute inset-0 bg-background/90" />
       <div className="section-container">
         <div className="reveal opacity-0 mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-black tracking-tight sm:text-4xl">

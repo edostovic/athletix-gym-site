@@ -32,9 +32,12 @@ export default function Navbar() {
       <div className="section-container">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="size-8 rounded-lg bg-brand-gradient flex items-center justify-center font-bold text-white text-sm">
-              A
-            </div>
+            <img
+              src="/athletix_logo.jpg"
+              alt="ATHLETIX logo"
+              className="size-8 rounded-lg object-cover border border-brand-500/30"
+              onError={(e) => { e.currentTarget.style.display = "none"; }}
+            />
             <span className="font-bold text-lg">ATHLETIX</span>
           </Link>
 
