@@ -1,5 +1,4 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import { img } from "@/lib/utils";
 import { siteConfig } from "@/lib/constants";
 
 const contactMethods = [
@@ -28,13 +27,7 @@ const contactMethods = [
 
 export function CTASection() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Gym background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.05]"
-        style={{ backgroundImage: `url(${img("/insta_post_1.jpg")})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-brand-950/20" />
+    <section id="contact" className="py-24 bg-background">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold">Kontakt</h2>
@@ -49,7 +42,7 @@ export function CTASection() {
                 <Wrapper
                   key={item.label}
                   {...(item.href ? { href: item.href } : {})}
-                  className="flex flex-col items-center gap-3 p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-brand-500/30 hover:bg-brand-500/5 transition-all duration-200 group"
+                  className="flex flex-col items-center gap-3 p-6 rounded-2xl border border-white/10 bg-card hover:border-brand-500/30 hover:bg-brand-500/5 transition-all duration-200 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center group-hover:bg-brand-500/20 transition-colors">
                     <item.icon className="h-6 w-6 text-brand-400" />
@@ -68,7 +61,7 @@ export function CTASection() {
             })}
           </div>
 
-          <div className="mt-10 text-sm text-muted-foreground border border-white/10 rounded-xl p-4 max-w-md mx-auto bg-white/[0.02]">
+          <div className="mt-10 text-sm text-muted-foreground border border-white/10 rounded-xl p-4 max-w-md mx-auto bg-card">
             <p className="font-semibold text-foreground mb-1">Radno vrijeme</p>
             <p>{siteConfig.hours}</p>
           </div>

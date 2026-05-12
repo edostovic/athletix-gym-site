@@ -46,7 +46,7 @@ export function HeroSection() {
         style={{ backgroundImage: `url(${img("/athletix_main.jpg")})` }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/40 to-background/80" />
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6">

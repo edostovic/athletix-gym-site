@@ -31,7 +31,7 @@ export function TrainersSection() {
         className="absolute inset-0 bg-cover bg-center opacity-[0.04]"
         style={{ backgroundImage: `url(${img("/insta_post_4.jpg")})` }}
       />
-      <div className="absolute inset-0 bg-background/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background/85" />
       <div className="section-container">
         <div className="reveal opacity-0 mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
