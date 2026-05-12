@@ -6,8 +6,8 @@ export const siteConfig = {
   location: "Banovići",
   description: "Moderna teretana sa vrhunskim trenerima i opremom.",
   hours: "Pon-Pet: 06:00-22:00 | Sub: 08:00-20:00 | Ned: 10:00-16:00",
-  phone: "+387 XX XXX-XXX",
-  email: "info@athletix.ba",
+  phone: "+387 61 954 069",
+  email: "atheltixgym.info@gmail.com",
   address: "Banovići, Bosna i Hercegovina",
   social: { instagram: "#", facebook: "#", youtube: "#" },
 };

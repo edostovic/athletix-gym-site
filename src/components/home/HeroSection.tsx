@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Dumbbell, Users, Award, Phone } from "lucide-react";
+import { ArrowRight, Dumbbell, Users, Award } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 
@@ -86,13 +86,12 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <a
-            href={`tel:${siteConfig.phone}`}
-            className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-transparent px-8 py-6 text-base font-medium text-foreground transition-colors hover:bg-white/5 gap-2"
+          <Link
+            href="#about"
+            className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-transparent px-8 py-6 text-base font-medium text-foreground transition-colors hover:bg-white/5"
           >
-            <Phone className="h-4 w-4 text-brand-400" />
-            {siteConfig.phone}
-          </a>
+            Saznaj više
+          </Link>
         </div>
 
         {/* Stats */}

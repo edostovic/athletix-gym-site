@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
-import { siteConfig } from "@/lib/constants";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#hero", label: "Početna" },
@@ -53,14 +52,7 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href={`tel:${siteConfig.phone}`}
-              className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-brand-400 transition-colors"
-            >
-              <Phone className="h-3.5 w-3.5" />
-              {siteConfig.phone}
-            </a>
+          <div className="hidden md:block">
             <Link href="#contact">
               <Button className="bg-brand-gradient text-white font-bold hover:opacity-90 shadow-lg shadow-brand-500/25">
                 Kontakt
@@ -93,17 +85,9 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={`tel:${siteConfig.phone}`}
-              className="flex items-center gap-2 text-sm text-brand-400 hover:text-brand-300 transition-colors py-2"
-              onClick={() => setMobileOpen(false)}
-            >
-              <Phone className="h-4 w-4" />
-              {siteConfig.phone}
-            </a>
             <Link href="#contact" onClick={() => setMobileOpen(false)}>
               <Button className="w-full bg-brand-gradient text-white font-bold hover:opacity-90">
-                Kontaktiraj nas
+                Kontakt
               </Button>
             </Link>
           </nav>
