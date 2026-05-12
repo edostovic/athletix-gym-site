@@ -1,82 +1,104 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Check, Phone, Mail } from "lucide-react";
 import { pricing, siteConfig } from "@/lib/constants";
 
+const planIcons = ["🕐", "📆", "📅"];
+
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 bg-background">
-      <div className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Cjenovnik</h2>
+    <section id="pricing" className="py-20 bg-background relative">
+      {/* Subtle background accent */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-brand-500/5 blur-[120px] pointer-events-none" />
+
+      <div className="section-container relative">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-bold">Članarine</h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Transparentne cijene — bez skrivenih troškova. Prvi trening besplatan.
+            Pregled cijena i šta je uključeno. Za upis ili probni trening, kontaktirajte nas.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {pricing.map((plan) => (
-            <Card
+        <div className="max-w-3xl mx-auto space-y-4">
+          {pricing.map((plan, i) => (
+            <div
               key={plan.name}
-              className={`relative p-8 flex flex-col ${
-                plan.tag === "Najtraženija opcija"
-                  ? "border-brand-500 shadow-xl shadow-brand-500/10 md:scale-105"
-                  : ""
+              className={`rounded-2xl border p-6 transition-all duration-200 ${
+            plan.popular
+                  ? "border-brand-500 bg-brand-500/[0.03] shadow-lg shadow-brand-500/10"
+                  : "border-white/10 bg-white/[0.02] hover:border-white/20"
               }`}
             >
-              {plan.tag && (
-                <Badge
-                  className={`absolute -top-3 left-1/2 -translate-x-1/2 border-0 px-6 py-1 ${
-                    plan.tag === "Najtraženija opcija"
-                      ? "bg-brand-gradient text-white"
-                      : "bg-white/10 text-muted-foreground"
-                  }`}
-                >
-                  {plan.tag}
-                </Badge>
-              )}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                {/* Icon + Name + Price */}
+                <div className="flex items-center gap-4 flex-1 min-w-0">
+                  <div className="text-2xl shrink-0">{planIcons[i]}</div>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-bold text-lg">{plan.name}</h3>
+{plan.popular && (
+                        <span className="text-xs font-semibold text-brand-500 bg-brand-500/10 px-2.5 py-0.5 rounded-full">
+                          Najtraženija
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-baseline gap-1 mt-0.5">
+                      <span className="text-2xl font-black">{plan.price}</span>
+                      <span className="text-sm text-muted-foreground">/{plan.period}</span>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="mb-6 text-center">
-                <h3 className="text-xl font-bold">{plan.name}</h3>
-                <div className="mt-2">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  <span className="text-muted-foreground ml-1">/{plan.period}</span>
+                {/* Features (inline on desktop) */}
+                <div className="hidden sm:flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                  {plan.features.slice(0, 3).map((f) => (
+                    <span key={f} className="flex items-center gap-1">
+                      <Check className="h-3 w-3 text-brand-500 shrink-0" />
+                      {f}
+                    </span>
+                  ))}
+                  {plan.features.length > 3 && (
+                    <span className="text-xs text-muted-foreground/60">
+                      +{plan.features.length - 3} još
+                    </span>
+                  )}
                 </div>
               </div>
 
-              <ul className="space-y-3 flex-1">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-brand-500 mt-0.5 shrink-0" />
-                    <span className="text-muted-foreground">{feature}</span>
-                  </li>
+              {/* Features (mobile) */}
+              <div className="sm:hidden mt-3 flex flex-wrap gap-x-3 gap-y-1.5 text-sm text-muted-foreground">
+                {plan.features.map((f) => (
+                  <span key={f} className="flex items-center gap-1">
+                    <Check className="h-3 w-3 text-brand-500 shrink-0" />
+                    {f}
+                  </span>
                 ))}
-              </ul>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Single contact prompt below all cards */}
-        <div className="mt-10 text-center border border-white/10 rounded-2xl p-6 max-w-xl mx-auto bg-white/[0.02]">
-          <p className="text-sm text-muted-foreground mb-4">
-            Zainteresovan/a si? Javi nam se na broj ili email — dogovori probni trening ili upit za članstvo.
-          </p>
-          <div className="flex items-center justify-center gap-6 text-sm">
-            <a
-              href={`tel:${siteConfig.phone}`}
-              className="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 transition-colors font-semibold"
-            >
-              <Phone className="h-4 w-4" />
-              {siteConfig.phone}
-            </a>
-            <span className="text-muted-foreground/40">|</span>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 transition-colors font-semibold"
-            >
-              <Mail className="h-4 w-4" />
-              {siteConfig.email}
-            </a>
+        {/* Contact strip */}
+        <div className="mt-10 text-center max-w-3xl mx-auto">
+          <div className="rounded-2xl bg-gradient-to-r from-brand-500/10 via-brand-500/5 to-brand-500/10 border border-brand-500/20 p-6">
+            <p className="text-sm font-medium mb-4">
+              Prvi trening besplatan! Javi se za više informacija ili dogovori probni termin.
+            </p>
+            <div className="flex items-center justify-center gap-6">
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 transition-colors font-semibold text-sm"
+              >
+                <Phone className="h-4 w-4" />
+                {siteConfig.phone}
+              </a>
+              <span className="text-muted-foreground/30">|</span>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 transition-colors font-semibold text-sm"
+              >
+                <Mail className="h-4 w-4" />
+                Pošalji email
+              </a>
+            </div>
           </div>
         </div>
       </div>
