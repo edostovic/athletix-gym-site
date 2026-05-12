@@ -42,7 +42,8 @@ export function CTASection() {
                 <Wrapper
                   key={item.label}
                   {...(item.href ? { href: item.href } : {})}
-                  className="flex flex-col items-center gap-3 p-6 rounded-2xl border border-white/10 bg-card hover:border-brand-500/30 hover:bg-brand-500/5 transition-all duration-200 group"
+                  className="flex flex-col items-center gap-3 p-6 rounded-2xl border border-white/10 bg-card hover:border-brand-500/30 hover:bg-brand-500/5 transition-all duration-200 group select-none"
+                  {...(item.href ? {} : {})}
                 >
                   <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center group-hover:bg-brand-500/20 transition-colors">
                     <item.icon className="h-6 w-6 text-brand-400" />
