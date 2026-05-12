@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { img } from "@/lib/utils";
 import { siteConfig } from "@/lib/constants";
 
 const contactMethods = [
@@ -31,7 +32,7 @@ export function CTASection() {
       {/* Gym background image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.05]"
-        style={{ backgroundImage: "url(/insta_post_1.jpg)" }}
+        style={{ backgroundImage: `url(${img("/insta_post_1.jpg")})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-brand-950/20" />
       <div className="section-container">

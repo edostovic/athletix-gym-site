@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { trainers } from "@/lib/constants";
+import { img } from "@/lib/utils";
 
 export function TrainersSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -28,7 +29,7 @@ export function TrainersSection() {
     <section id="trainers" ref={sectionRef} className="section-padding relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.04]"
-        style={{ backgroundImage: "url(/insta_post_4.jpg)" }}
+        style={{ backgroundImage: `url(${img("/insta_post_4.jpg")})` }}
       />
       <div className="absolute inset-0 bg-background/90" />
       <div className="section-container">
@@ -50,7 +51,7 @@ export function TrainersSection() {
               {/* Trainer photo */}
               <div className="mx-auto mb-5 h-28 w-28 rounded-full overflow-hidden border-2 border-brand-500/30">
                 <img
-                  src={trainer.image}
+                  src={img(trainer.image)}
                   alt={trainer.name}
                   className="w-full h-full object-cover"
                   onError={(e) => {

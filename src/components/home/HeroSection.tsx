@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowRight, Dumbbell, Users, Award } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
+import { img } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const stats = [
@@ -42,7 +43,7 @@ export function HeroSection() {
       {/* Gym background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/athletix_main.jpg)" }}
+        style={{ backgroundImage: `url(${img("/athletix_main.jpg")})` }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background" />

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { img } from "@/lib/utils";
 
 const navLinks = [
   { href: "#hero", label: "Početna" },
@@ -33,7 +34,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
             <img
-              src="/athletix_logo.jpg"
+              src={img("/athletix_logo.jpg")}
               alt="ATHLETIX logo"
               className="size-8 rounded-lg object-cover border border-brand-500/30"
               onError={(e) => { e.currentTarget.style.display = "none"; }}

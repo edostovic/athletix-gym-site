@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Quote } from "lucide-react";
 import { testimonials } from "@/lib/constants";
+import { img } from "@/lib/utils";
 
 export function TestimonialsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ export function TestimonialsSection() {
     <section ref={sectionRef} className="section-padding relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.04]"
-        style={{ backgroundImage: "url(/insta_post_6.jpg)" }}
+        style={{ backgroundImage: `url(${img("/insta_post_6.jpg")})` }}
       />
       <div className="absolute inset-0 bg-background/90" />
       <div className="section-container">

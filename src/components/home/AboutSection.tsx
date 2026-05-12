@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Dumbbell, Users, Flame } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
+import { img } from "@/lib/utils";
 
 const features = [
   {
@@ -65,7 +66,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden border border-white/10">
               <img
-                src="/athletix_gym_profile.jpg"
+                src={img("/athletix_gym_profile.jpg")}
                 alt="ATHLETIX Gym Banovići"
                 className="w-full h-auto object-cover"
                 onError={(e) => { e.currentTarget.style.display = "none"; }}

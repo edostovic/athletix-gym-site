@@ -1,5 +1,6 @@
 import { Check, Phone, Mail } from "lucide-react";
 import { pricing, siteConfig } from "@/lib/constants";
+import { img } from "@/lib/utils";
 
 const planIcons = ["🕐", "📆", "📅"];
 
@@ -9,7 +10,7 @@ export function PricingSection() {
       {/* Gym background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-[0.07]"
-        style={{ backgroundImage: "url(/insta_post_3.jpg)" }}
+        style={{ backgroundImage: `url(${img("/insta_post_3.jpg")})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       {/* Subtle background accent */}
