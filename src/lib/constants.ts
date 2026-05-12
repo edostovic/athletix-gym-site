@@ -13,9 +13,9 @@ export const siteConfig = {
 };
 
 export const trainers = [
-  { name: "Trener 1", title: "Personal Trainer", bio: "Specijalizovan za snagu i kondiciju.", image: "/insta_post_2.jpg" },
-  { name: "Trener 2", title: "Fitness Instruktor", bio: "Stručnjak za grupne treninge.", image: "/insta_post_3.jpg" },
-  { name: "Trener 3", title: "Nutricionista", bio: "Planiranje ishrane i suplementacija.", image: "/insta_post_5.jpg" },
+  { name: "Trener 1", title: "Personal Trainer", bio: "Specijalizovan za snagu i kondiciju." },
+  { name: "Trener 2", title: "Fitness Instruktor", bio: "Stručnjak za grupne treninge." },
+  { name: "Trener 3", title: "Nutricionista", bio: "Planiranje ishrane i suplementacija." },
 ];
 
 export const pricing = [
