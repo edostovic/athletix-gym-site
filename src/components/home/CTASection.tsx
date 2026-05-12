@@ -37,15 +37,21 @@ export function CTASection() {
 
           <div className="mt-10 grid sm:grid-cols-3 gap-4">
             {contactMethods.map((item) => {
-              const Wrapper = item.href ? "a" : "div";
+              const isClickable = !!item.href;
+              const Wrapper = isClickable ? "a" : "div";
               return (
                 <Wrapper
                   key={item.label}
-                  {...(item.href ? { href: item.href } : {})}
-                  className="flex flex-col items-center gap-3 p-6 rounded-2xl border border-white/10 bg-card hover:border-brand-500/30 hover:bg-brand-500/5 transition-all duration-200 group select-none"
-                  {...(item.href ? {} : {})}
+                  {...(isClickable ? { href: item.href } : {})}
+                  className={`flex flex-col items-center gap-3 p-6 rounded-2xl border border-white/10 bg-card select-none ${
+                    isClickable
+                      ? "hover:border-brand-500/30 hover:bg-brand-500/5 transition-all duration-200 group cursor-pointer"
+                      : ""
+                  }`}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center group-hover:bg-brand-500/20 transition-colors">
+                  <div className={`w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center transition-colors ${
+                    isClickable ? "group-hover:bg-brand-500/20" : ""
+                  }`}>
                     <item.icon className="h-6 w-6 text-brand-400" />
                   </div>
                   <div>
@@ -53,7 +59,7 @@ export function CTASection() {
                     <p className="font-semibold text-foreground">{item.value}</p>
                   </div>
                   {item.action && (
-                    <span className="text-xs text-brand-400 group-hover:text-brand-300 transition-colors">
+                    <span className="text-xs text-brand-400 transition-colors">
                       {item.action} →
                     </span>
                   )}
