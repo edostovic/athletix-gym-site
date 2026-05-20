@@ -8,7 +8,7 @@ export const siteConfig = {
     "Vrhunski opremljeni, moderno dizajnirani fitness centar koji pruža najkvalitetnije i najkompletnije usluge iz područja fitnessa, za rekreativno i profesionalno bavljenje ovim vidom sporta.",
   description:
     "Moderna teretana sa vrhunskim trenerima, najnovijom opremom i motivirajućom atmosferom u Banovićima.",
-  hours: "Pon-Pet: 06:00-22:00 | Sub: 08:00-20:00 | Ned: 10:00-16:00",
+  hours: "Pon-Pet: 06:00-22:00 | Sub: 08:00-20:00 | Ned: Zatvoreno",
   phone: "+387 61 954 069",
   email: "atheltixgym.info@gmail.com",
   address: "Alije Izetbegovića 134, 75290 Banovići, Bosna i Hercegovina",
