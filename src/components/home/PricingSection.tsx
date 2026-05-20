@@ -7,10 +7,10 @@ const planIcons = ["🕐", "📆", "📅"];
 export function PricingSection() {
   return (
     <section id="pricing" className="py-20 relative overflow-hidden">
-      {/* Gym background image */}
+      {/* Real gym photo — equipment floor */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-[0.07]"
-        style={{ backgroundImage: `url(${img("/insta_post_3.jpg")})` }}
+        style={{ backgroundImage: `url(${img("/athletix_gym_4.webp")})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       {/* Subtle background accent */}

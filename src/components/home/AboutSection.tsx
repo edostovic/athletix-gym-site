@@ -65,10 +65,10 @@ export function AboutSection() {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden border border-white/10">
               <img
-                src={img("/athletix_gym_profile.jpg")}
-                alt="ATHLETIX Gym Banovići"
+                src={img("/athletix_gym_3.webp")}
+                alt="Unutrašnjost Fitness Centra Athletix Banovići"
                 className="w-full h-auto object-cover"
-                onError={(e) => { e.currentTarget.style.display = "none"; }}
+                loading="lazy"
               />
             </div>
             {/* Decorative glow */}
@@ -91,6 +91,29 @@ export function AboutSection() {
               Pratite nas na Instagramu: {siteConfig.instagramHandle} —{' '}
               {siteConfig.instagramFollowers} pratilaca, {siteConfig.instagramPosts} objava
             </div>
+
+          {/* Supplement store photo */}
+          <div className="mt-6 grid grid-cols-2 gap-3">
+            <div className="rounded-xl overflow-hidden border border-white/10">
+              <img
+                src={img("/athletix_gym_supplements.webp")}
+                alt="Prodaja suplemenata u Athletixu"
+                className="w-full h-32 object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden border border-white/10">
+              <img
+                src={img("/athletix_gym_crossfit2.webp")}
+                alt="Crossfit zona Athletix"
+                className="w-full h-32 object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            Prodaja suplemenata i crossfit zona — sve na jednom mjestu
+          </p>
           </div>
         </div>
 

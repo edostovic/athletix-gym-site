@@ -40,10 +40,10 @@ export function HeroSection() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Gym background image */}
+      {/* Real gym photo — wide shot of the training floor */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${img("/athletix_main.jpg")})` }}
+        style={{ backgroundImage: `url(${img("/athletix_gym_1.webp")})` }}
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/40 to-background/80" />

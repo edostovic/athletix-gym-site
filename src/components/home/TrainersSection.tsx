@@ -29,7 +29,7 @@ export function TrainersSection() {
     <section id="trainers" ref={sectionRef} className="section-padding relative overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-[0.04]"
-        style={{ backgroundImage: `url(${img("/insta_post_4.jpg")})` }}
+        style={{ backgroundImage: `url(${img("/athletix_gym_crossfit.webp")})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background/85" />
       <div className="section-container">
