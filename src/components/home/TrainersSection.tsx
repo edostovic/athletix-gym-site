@@ -35,10 +35,10 @@ export function TrainersSection() {
       <div className="section-container">
         <div className="reveal opacity-0 mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
-            Upoznaj naše <span className="text-brand-gradient">trenere</span>
+            Naše <span className="text-brand-gradient">usluge</span>
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Stručni tim posvećen tvojim rezultatima.
+            Stručni tim posvećen tvojim rezultatima — personalni treninzi, grupni programi i savjetovanje o ishrani.
           </p>
         </div>
 

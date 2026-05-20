@@ -26,19 +26,19 @@ export const siteConfig = {
 
 export const trainers = [
   {
-    name: "Trener 1",
-    title: "Personal Trainer — Snaga i Kondicija",
-    bio: "Specijalizovan za trening snage, kondicijske pripreme i transformacije tijela. Individualni pristup svakom članu.",
+    name: "Personalni Treneri",
+    title: "Snaga i Kondicija",
+    bio: "Certificirani personalni treneri sa dugogodišnjim iskustvom. Individualni pristup i program prilagođen tvojim ciljevima.",
   },
   {
-    name: "Trener 2",
-    title: "Fitness Instruktor — Grupni Treninzi",
-    bio: "Stručnjak za grupne fitness programe, funkcionalni trening i kardio vježbe. Energičan i motivirajući pristup.",
+    name: "Grupni Treninzi",
+    title: "Funkcionalni Trening",
+    bio: "Stručni instruktori za grupne fitness programe, funkcionalni trening i kardio vježbe. Energičan i motivirajući pristup.",
   },
   {
-    name: "Trener 3",
-    title: "Nutricionista — Ishrana i Suplementacija",
-    bio: "Planiranje individualnih prehrambenih programa i savjetovanje o suplementaciji za optimalne rezultate.",
+    name: "Nutricionističko",
+    title: "Savjetovanje",
+    bio: "Stručno planiranje individualnih prehrambenih programa i savjetovanje o ishrani za optimalne rezultate.",
   },
 ];
 
