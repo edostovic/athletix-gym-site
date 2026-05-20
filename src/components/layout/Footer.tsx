@@ -95,7 +95,7 @@ export function Footer() {
             <div className="space-y-2 text-sm text-muted-foreground">
               <p><span className="text-brand-400 font-medium">Pon - Pet:</span> 06:00 - 22:00</p>
               <p><span className="text-brand-400 font-medium">Sub:</span> 08:00 - 20:00</p>
-              <p><span className="text-brand-400 font-medium">Ned:</span> 10:00 - 16:00</p>
+              <p><span className="text-brand-400 font-medium">Ned:</span> Zatvoreno</p>
             </div>
             <div className="space-y-2 pt-2 text-sm">
               <a
