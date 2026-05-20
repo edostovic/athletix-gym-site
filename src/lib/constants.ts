@@ -111,26 +111,26 @@ export const facilities = [
 export const testimonials = [
   {
     quote:
-      "ATHLETIX mi je promijenio život. Izgubio sam 15kg za 3 mjeseca uz vrhunske trenere i odličnu atmosferu. Svaka preporuka!",
-    author: "Marko K.",
-    role: "Član 3 godine",
+      "Sve na vrhunskom nivou — oprema, atmosfera, osoblje. Najbolja teretana u kojoj sam bio.",
+    author: "Eldin Hadžić",
+    role: "Preporučuje · Nov 2021",
   },
   {
     quote:
-      "Najbolja teretana u Banovićima. Moderna oprema, prijateljsko osoblje i prava motivacija. Jedva čekam svaki trening.",
-    author: "Amela S.",
-    role: "Članica 1 godina",
+      "Odlično, sve pohvale! Najveća teretana, svaka preporuka za trening.",
+    author: "Denis Halilović",
+    role: "Preporučuje · Mar 2019",
   },
   {
     quote:
-      "Početnik sam i treneri su mi od prvog dana pokazali svaku vježbu. Nikad se nisam osjećao ugodnije u teretani.",
-    author: "Ivan H.",
-    role: "Novi član",
+      "Prejaka teretana! Osoblje perfektno, sve na nivou, treneri odlično rade svoj posao. Sve preporuke! 💪🏻",
+    author: "Emil Bojić",
+    role: "Preporučuje · Feb 2019",
   },
   {
     quote:
-      "Oprema je vrhunska, atmosfera još bolja. Dolazim svaki dan i ne planiram stati. Athletix je moja druga kuća.",
-    author: "Dino K.",
-    role: "Član 2 godine",
+      "Fantastična teretana sa novom i raznolikom opremom za sve vrste treninga. Osoblje je ljubazno, dobrodošlo i uvijek spremno pomoći. Okruženje za vježbanje je uvijek čisto i uredno. Odlično mjesto za trening.",
+    author: "Edin D.",
+    role: "Član",
   },
 ];
