@@ -20,6 +20,8 @@ jobs:
           node-version: 22
           cache: 'npm'
       - run: npm ci
+      - name: Swap to GitHub Pages config
+        run: cp next.config.git.ts next.config.ts
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Vercel (default) — no output/basePath needed
-  // GitHub Pages — run with: next.config.ts.git.ts
+  output: "export",
+  basePath: "/athletix-gym-site",
   images: { unoptimized: true },
 };
 
