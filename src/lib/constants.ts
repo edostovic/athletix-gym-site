@@ -130,7 +130,7 @@ export const testimonials = [
   {
     quote:
       "Fantastična teretana sa novom i raznolikom opremom za sve vrste treninga. Osoblje je ljubazno, dobrodošlo i uvijek spremno pomoći. Okruženje za vježbanje je uvijek čisto i uredno. Odlično mjesto za trening.",
-    author: "Edin D.",
+    author: "Emir Dostović",
     role: "Član",
   },
 ];
