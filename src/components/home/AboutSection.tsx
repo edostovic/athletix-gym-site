@@ -56,8 +56,7 @@ export function AboutSection() {
             Zašto <span className="text-brand-gradient">ATHLETIX</span>?
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            {siteConfig.fullName} je više od teretane. Mi smo zajednica
-            posvećena tvojoj transformaciji.
+            {siteConfig.fullDescription}
           </p>
         </div>
 
@@ -78,14 +77,20 @@ export function AboutSection() {
 
           <div className="space-y-5">
             <p className="text-muted-foreground leading-relaxed">
-              Vrhunska oprema, stručni treneri i atmosfera koja inspiriše — sve na jednom mjestu.
-              Bilo da si početnik ili iskusan sportista, kod nas ćeš pronaći sve što ti treba
-              za ozbiljan trening i stvarne rezultate.
+              Fitness Centar Athletix je vrhunski opremljeni, moderno dizajnirani fitness centar
+              u Banovićima. Pružamo najkvalitetnije i najkompletnije usluge iz područja fitnessa
+              za rekreativno i profesionalno bavljenje sportom.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Nije potrebno iskustvo. Svi nivoi su dobrodošli. Prvi trening je besplatan —
-              dođi, probaj, pa odluči.
+              Bilo da si početnik ili iskusan sportista, kod nas ćeš pronaći sve što ti treba
+              za ozbiljan trening i stvarne rezultate. Nije potrebno iskustvo — svi nivoi su
+              dobrodošli. Prvi trening je besplatan: dođi, probaj, pa odluči.
             </p>
+            <div className="pt-2 flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="h-2 w-2 rounded-full bg-brand-500" />
+              Pratite nas na Instagramu: {siteConfig.instagramHandle} —{' '}
+              {siteConfig.instagramFollowers} pratilaca, {siteConfig.instagramPosts} objava
+            </div>
           </div>
         </div>
 

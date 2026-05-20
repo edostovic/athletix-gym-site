@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { siteConfig } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -10,15 +11,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ATHLETIX Gym — Bez izgovora. Samo rezultati.",
-  description:
-    "Moderna teretana u Banovićima sa vrhunskim trenerima i opremom. Pridruži se ATHLETIX zajednici danas!",
+  title: "Fitness Centar Athletix Banovići — Bez izgovora. Samo rezultati.",
+  description: siteConfig.fullDescription,
+  keywords: [
+    "teretana Banovići",
+    "fitness centar Banovići",
+    "Athletix",
+    "gym Banovići",
+    "personalni trening",
+    "fitness Bosna",
+  ],
   openGraph: {
-    title: "ATHLETIX Gym — Bez izgovora. Samo rezultati.",
-    description:
-      "Moderna teretana u Banovićima sa vrhunskim trenerima i opremom.",
+    title: `${siteConfig.fullName} — ${siteConfig.tagline}`,
+    description: siteConfig.fullDescription,
+    url: "https://athletix-gym.ba",
+    siteName: siteConfig.fullName,
     locale: "bs_BA",
     type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

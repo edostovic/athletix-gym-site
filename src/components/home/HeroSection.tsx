@@ -2,15 +2,15 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, Dumbbell, Users, Award } from "lucide-react";
+import { ArrowRight, Users, Award } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 import { img } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { value: "+500", label: "Članova", icon: Users },
+  { value: `+${siteConfig.instagramFollowers}`, label: "Pratilaca", icon: Users },
+  { value: `${siteConfig.instagramPosts}+`, label: "Objave", icon: Users },
   { value: "6+", label: "Godina", icon: Award },
-  { value: "Vrhunski", label: "Treneri", icon: Dumbbell },
 ];
 
 export function HeroSection() {
@@ -87,6 +87,19 @@ export function HeroSection() {
           >
             Saznaj više
           </Link>
+          <a
+            href={siteConfig.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-lg border border-brand-500/30 bg-brand-500/5 px-8 py-6 text-base font-medium text-brand-400 transition-colors hover:bg-brand-500/10"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mr-2 h-5 w-5">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+            Instagram
+          </a>
         </div>
 
         {/* Stats */}

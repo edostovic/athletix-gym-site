@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Map } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 
 const contactMethods = [
@@ -20,8 +20,8 @@ const contactMethods = [
     icon: MapPin,
     label: "Adresa",
     value: siteConfig.address,
-    href: null,
-    action: null,
+    href: `https://www.google.com/maps/search/${encodeURIComponent(siteConfig.address)}`,
+    action: "Otvori mapu",
   },
 ];
 
@@ -71,6 +71,22 @@ export function CTASection() {
           <div className="mt-10 text-sm text-muted-foreground border border-white/10 rounded-xl p-4 max-w-md mx-auto bg-card">
             <p className="font-semibold text-foreground mb-1">Radno vrijeme</p>
             <p>{siteConfig.hours}</p>
+          </div>
+
+          <div className="mt-4 text-center">
+            <a
+              href={siteConfig.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-brand-400 transition-colors"
+            >
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600/10 text-blue-400">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </span>
+              Fitness Centar Athletix na Facebooku · {siteConfig.facebookLikes} lajkova
+            </a>
           </div>
         </div>
       </div>

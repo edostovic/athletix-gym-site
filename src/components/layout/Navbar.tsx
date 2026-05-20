@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { siteConfig } from "@/lib/constants";
 import { img } from "@/lib/utils";
 
 const navLinks = [
@@ -55,8 +56,21 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
+          {/* Desktop actions */}
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted-foreground hover:text-brand-400 hover:border-brand-500/30 transition-all"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
             <Link href="#contact">
               <Button className="bg-brand-gradient text-white font-bold hover:opacity-90 shadow-lg shadow-brand-500/25">
                 Kontakt
@@ -89,6 +103,20 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-brand-400 transition-colors"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+              Instagram
+            </a>
             <Link href="#contact" onClick={() => setMobileOpen(false)}>
               <Button className="w-full bg-brand-gradient text-white font-bold hover:opacity-90">
                 Kontakt
